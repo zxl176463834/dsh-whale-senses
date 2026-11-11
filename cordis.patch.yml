@@ -1,0 +1,5 @@
+# dsh-whale-senses bundle patch —— 把「感官」挂进 DSH 配置树。
+# 顶层必须是 insert，name 必须是包名。
+- insert:
+    - id: senses
+      name: 'dsh-whale-senses'

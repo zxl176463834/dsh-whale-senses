@@ -1,0 +1,37 @@
+{
+    "name":  "dsh-whale-senses",
+    "version": "0.6.0-mo.1",
+    "private":  true,
+    "type":  "module",
+    "description":  "婵犫拃浣稿闁告繃妞介幆鍐礋椤掆偓婵℃娊鎮楃憴鍕嗘垿鍩€椤掑倻甯涢悽顖氱埣閺佸秴顫濇潏銊х毥闂佹寧绋戦悧濠囧箟濮樿泛纾介煫鍥ㄦ尪娴犲牓鏌? 闂佸憡鐟辩紞鍥╂濞嗘挸瀚夋い鎺嗗亾婵犫偓?IndexTTS 闂佸搫鐗婇〃澶愵敋娴煎瓨鏅璺侯槺閻у矂鏌涘顒傚缂佹梹鎸抽弫宥呯暆閸愶絽浜剧紒娑樻贡缁€鍕偣閸ヨ泛寮柣鎾瑰煐濞煎繘骞橀崘鎻掓辈闂佹寧绋戦ˇ顔惧垝濞戞碍灏?dsh-voice-panel",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./client":  "./client/index.js",
+                    "./locale/*.json":  "./locale/*.json",
+                    "./icon":  "./icon.svg",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib",
+                  "client",
+                  "server",
+                  "locale/*.json",
+                  "icon.svg",
+                  "cordis.patch.yml"
+              ],
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "platform":  "web",
+                               "inject":  [
+                                              "@deepseek-ai/dsh-client-runtime",
+                                              "@deepseek-ai/dsh-client-connection",
+                                              "@deepseek-ai/dsh-client-ui-settings"
+                                          ]
+                           }
+            },
+    "license":  "MIT"
+}
