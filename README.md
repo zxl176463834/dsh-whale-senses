@@ -151,6 +151,17 @@ pnpm add link:<这个仓库的路径>
 
 ---
 
+## 支持这个项目
+
+代码免费，MIT，商用也行。如果这套东西帮到了你，欢迎：
+
+- **爱发电**：https://afdian.com/a/z531531?utm_source=copylink&utm_medium=link
+- **B 站充电**：[大龙家的小墨](https://space.bilibili.com/3546393585125381)
+
+钱不是重点。你把它挪去自己的 Agent 上，或者告诉我哪里设计得不对，比什么都值。
+
+---
+
 ## 许可
 
 MIT
