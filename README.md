@@ -151,6 +151,49 @@ pnpm add link:<这个仓库的路径>
 
 ---
 
+## 用到的开源项目
+
+这套东西不是凭空造的。下面是它踩着的肩膀，分两类写清楚。
+
+### 一、这个插件自己用的
+
+| 项目 | 作者 | 地址 | 许可 |
+|---|---|---|---|
+| **DeepSeek Harness** | DeepSeek | npm 包 `@deepseek-ai/dsh` | — |
+| **OpenCV** | OpenCV Team | https://github.com/opencv/opencv | Apache-2.0 |
+| **Qwen3-TTS** | 阿里通义千问团队 | https://github.com/QwenLM/Qwen3-TTS | 见仓库 |
+| **SenseVoice** | 阿里 FunAudioLLM | https://github.com/FunAudioLLM/SenseVoice | 见仓库 |
+
+- **眼**靠 OpenCV 取帧，调参走 Windows 的 WinRT。
+- **口**跑 Qwen3-TTS（模型几十亿参数，**不在本仓库里**，要自己下，遵守它自己的许可）。
+- **耳**走 DSH 自带的语音识别能力，底层是 SenseVoice。
+- **手**只调 Windows 系统接口（user32 + SendKeys），没有第三方库。
+
+### 二、同一个 Agent 里配合工作的
+
+这些**不是依赖**，代码也不在本仓库 —— 写在这里是因为这套东西跟它们一起才完整。
+
+| 插件 | 作者 | 地址 | 许可 |
+|---|---|---|---|
+| **dsh-video-storyboard** | SAOS-3624 | https://github.com/SAOS-3624/dsh-video-storyboard | Apache-2.0 |
+| **dsh-soundtry**（CixiSound） | CixiSVesper | https://github.com/CixiSVesper/dsh-soundtry | MIT |
+| **dsh-soundcheck** | ALittleLov | https://github.com/ALittleLov/dsh-soundcheck | MIT |
+| **any-audio** | cloudoyx | https://github.com/cloudoyx/any-audio | MIT |
+| **dsh-drawai** | fourzkw | https://github.com/fourzkw/dsh-drawai | MIT |
+| **dsh-context** | bowenliang123 | https://github.com/bowenliang123/dsh-context | Apache-2.0 |
+
+它们分别补的是：
+
+- **视频**：给它抽帧、读字幕、量动作 —— 看"录下来的"
+- **声音**：转写、节拍、和弦、结构 —— 听"录下来的"
+- **音乐**：真乐器音色渲染、多轨混音
+- **画布**：可编辑的图，人能拖、模型也能改
+- **上下文**：长会话的压缩与摘要
+
+分工上有个分界：**感官看"现在"**（摄像头、麦克风、桌面），**上面这些看"文件"**（mp4、mp3）。一个是活的，一个是回头看录像。
+
+---
+
 ## 支持这个项目
 
 代码免费，MIT，商用也行。如果这套东西帮到了你，欢迎：
